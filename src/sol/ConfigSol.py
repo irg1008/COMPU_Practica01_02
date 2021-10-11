@@ -2,12 +2,12 @@ import random
 from deap import base, creator, tools
 from HashData import get_data
 
-
 def configPopulation(): 
-		toolbox = base.Toolbox()
+		config, _, _ = get_data()
 
-		config, _ = get_data()
 		F, N, _, _ = config
+
+		toolbox = base.Toolbox()
 
 		creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 		creator.create("Individual", list, fitness=creator.FitnessMax)

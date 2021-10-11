@@ -1,15 +1,18 @@
 from ConfigSol import configPopulation
 from EvolStats import configStats, showGraph
 from EvolCycle import evolve
-from out import output_solution
+from Out import output_solution
+from HashData import get_data
 
-def main():   
+def main():     
     toolbox = configPopulation()
     stats = configStats()    
-    loogbook, bestSol = evolve(toolbox, stats)
+    loogbook, best_sol = evolve(toolbox, stats)
     
     showGraph(loogbook)
-    output_solution(bestSol)
+    
+    _, _, file_name = get_data()
+    output_solution(best_sol, file_name)
 
 
 if __name__ == "__main__":
