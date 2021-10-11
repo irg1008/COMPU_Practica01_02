@@ -8,7 +8,7 @@ file_name = None
 
 
 def get_data():
-    global config, rides
+    global config, rides, file_name
     if config is None or rides is None or file_name is None:
         init_data()
     return config, rides, file_name
