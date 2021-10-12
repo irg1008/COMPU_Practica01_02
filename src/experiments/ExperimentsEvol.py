@@ -1,6 +1,3 @@
-
-from deap import base, algorithms, tools
-
 import sys
 sys.path.append("..")
 sys.path.append("../sol")
@@ -16,8 +13,8 @@ def config_experiments():
 
     NGEN = [20, 30, 40, 50]
     NPROBLEM = list(range(1, 6))
-
     CXPB = 0.5
+
     MUTPB = 0.0
     NIND = 10
 
@@ -38,15 +35,19 @@ def execute(experiments):
     file_names = []
 
     for exp in experiments:
+
         nproblem, ngen, MUTPB, CXPB, NIND, INDPB, TOURNSIZE = exp
 
         config, rides, file_name = init_data(nproblem)
 
+        print(
+            f"Executing {file_name} with ngen: {ngen}, mutpb: {MUTPB}, cxpb: {CXPB}, nind: {NIND}, tournsize: {TOURNSIZE}")
+
         toolbox = config_population(config)
         stats = config_stats()
         logbook, best_sol, _ = evolve(toolbox, stats, config, rides,
-                                        CXPB, MUTPB, ngen, NIND, TOURNSIZE, INDPB)
-        
+                                      CXPB, MUTPB, ngen, NIND, TOURNSIZE, INDPB)
+
         best_fitness, = eval_ind(best_sol, config, rides)
 
         logbooks.append(logbook)
@@ -56,15 +57,17 @@ def execute(experiments):
     return logbooks, fitness, file_names
 
 
-def show_graphs():
-    return None
+def show_graphs(logbooks, fitness, file_names):
+    for logbook, fit, file_name in zip(logbooks, fitness, file_names):
+        print(file_name)
+        print(fitness)
+        show_graph(logbook)
 
 
 def main():
     experiments = config_experiments()
     logbooks, fitness, file_names = execute(experiments)
-    print(fitness)
-    print(file_names)
+    show_graphs(logbooks, fitness, file_names)
 
 
 if __name__ == "__main__":
