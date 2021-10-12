@@ -1,21 +1,6 @@
-import numpy as np
 from os import listdir
 from os.path import join, isfile, dirname
 from typing import List
-
-config, rides = None, None
-file_name = None
-
-
-def get_data():
-    global config, rides, file_name
-    if config is None or rides is None or file_name is None:
-        init_data()
-    return config, rides, file_name
-
-
-dir = dirname(__file__)
-
 
 def get_data_from_file(path: str):
     with open(path, "r") as f:
@@ -31,13 +16,14 @@ def get_paths_of_dir(path: str, extension: str):
             if isfile(join(path, f)) and f.endswith(extension)]
 
 
-def init_data():
-    global config, rides, file_name
+def init_data(n_problem=None):    
+    dir = dirname(__file__)
 
     inDirPath = join(dir, "../../Input/")
     inPaths = get_paths_of_dir(inDirPath, extension=".in")
 
-    n_problem = int(input("Elige el problema (1-5): "))
+    if n_problem is None or not 1 <= n_problem <= 5:
+        n_problem = int(input("Elige el problema (1-5): "))
 
     inDirFiles = listdir(inDirPath)
     file_name = inDirFiles[n_problem - 1]
@@ -51,3 +37,5 @@ def init_data():
 
     # Rides.
     rides = prob[1:]
+    
+    return config, rides, file_name

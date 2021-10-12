@@ -1,9 +1,6 @@
 import numpy as np
-from HashData import get_data
 
-config, rides, _ = get_data()
-F, _, B, T = config
-
+config, rides = [], []
 
 def sort_rides(vehicle_rides):
     def sort_ride(ride):
@@ -18,6 +15,8 @@ def sort_rides(vehicle_rides):
 
 
 def get_rides_from_ind(individual):
+    F = config[0]
+    
     vehicles_rides = np.full(F, None)
 
     for i, vehicle in enumerate(individual):
@@ -38,6 +37,8 @@ def dis(a, b): return np.abs(a[0] - b[0]) + np.abs(a[1]-b[1])
 
 
 def calc_fitness(car_rides):
+    _, _, B, T = config
+    
     fitness = 0
     step = 0
     pos = [0, 0]
@@ -72,14 +73,17 @@ def calc_fitness(car_rides):
         pos = destiny
 
         # 6.- Check if reached max distance with one vehicle.
-        #     Delete rides after this one.
         if step > T:
             break
 
     return fitness
 
 
-def eval_ind(ind):
+def eval_ind(ind, new_config, new_rides):
+    global config, rides
+    config = new_config
+    rides = new_rides
+    
     all_rides = get_rides_from_ind(ind)
 
     fitness = 0

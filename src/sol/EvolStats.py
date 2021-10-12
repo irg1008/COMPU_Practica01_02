@@ -3,7 +3,7 @@ import numpy as np
 from deap import tools
 
 
-def configStats():
+def config_stats():
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", np.mean)
     stats.register("std", np.std)
@@ -13,7 +13,7 @@ def configStats():
     return stats
 
 
-def showGraph(logbook):
+def show_graph(logbook):
     gen = logbook.select("gen")
     avgs = logbook.select("avg")
 

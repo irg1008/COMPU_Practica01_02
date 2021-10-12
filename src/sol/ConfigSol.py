@@ -1,10 +1,7 @@
 import random
 from deap import base, creator, tools
-from HashData import get_data
 
-def configPopulation(): 
-		config, _, _ = get_data()
-
+def config_population(config): 
 		F, N, _, _ = config
 
 		toolbox = base.Toolbox()

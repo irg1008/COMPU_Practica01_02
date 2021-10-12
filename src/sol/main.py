@@ -1,17 +1,17 @@
-from ConfigSol import configPopulation
-from EvolStats import configStats, showGraph
+from ConfigSol import config_population
+from EvolStats import config_stats, show_graph
 from EvolCycle import evolve
 from Out import output_solution
-from HashData import get_data
+from HashData import init_data
 
-def main():     
-    toolbox = configPopulation()
-    stats = configStats()    
-    loogbook, best_sol = evolve(toolbox, stats)
+def main():
+    config, rides, file_name = init_data()
     
-    showGraph(loogbook)
+    toolbox = config_population(config)
+    stats = config_stats()    
+    logbook, best_sol, _ = evolve(toolbox, stats, config, rides)
     
-    _, _, file_name = get_data()
+    show_graph(logbook)
     output_solution(best_sol, file_name)
 
 
