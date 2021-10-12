@@ -1,4 +1,4 @@
-from ConfigSol import config_population
+from ConfigSol import config_population, config_create
 from EvolStats import config_stats, show_graph
 from EvolCycle import evolve
 from Out import output_solution
@@ -6,6 +6,8 @@ from HashData import init_data
 
 def main():
     config, rides, file_name = init_data()
+    
+    config_create()
     
     toolbox = config_population(config)
     stats = config_stats()    
