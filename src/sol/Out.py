@@ -21,3 +21,5 @@ def output_solution(sol, file_name):
                 f.write(" ".join(str(pos) for pos, _ in v_r))
 
             f.write("\n")
+            
+    print(f"Output for {file_name} file has been created")
