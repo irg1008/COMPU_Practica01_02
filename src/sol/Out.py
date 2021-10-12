@@ -22,4 +22,4 @@ def output_solution(sol, file_name):
 
             f.write("\n")
             
-    print(f"Output for {file_name} file has been created")
+    print(f"Output file for {file_name} has been created in output folder with same name.")

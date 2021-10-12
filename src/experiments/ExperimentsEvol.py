@@ -14,12 +14,12 @@ from sol.EvolCycle import evolve
 
 
 def config_experiments():
-    NPROBLEM = [2, 3, 5]
+    NPROBLEM = [1]
 
     NGEN = [20] # Número de generaciones.
 
     CXPB = [0.2] # Probabilidad de cruce.
-    MUTPB = [0.] # Probabilidad de mutación.
+    MUTPB = [0.0, 0.2, 0.3, 0.5, 0.8, 0.5] # Probabilidad de mutación.
     NIND = [10] # Número de individuos en población.
 
     TOURNSIZE = [3] # Número de invividuos participando en cada torneo.

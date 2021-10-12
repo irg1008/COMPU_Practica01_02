@@ -5,7 +5,18 @@ import numpy as np
 def show_multiple_graphs(file_logbooks, file_experiments,
                          file_fitness, title):
 
-    fig, ax = plt.subplots(len(file_logbooks), constrained_layout=True)
+    colors = ["b", "r", "g", "y", "orange", "purple"]
+    def c(i): return colors[i if i < len(colors) else i % len(colors)]
+
+    l = len(file_logbooks)
+
+    nrows = 1 if l == 1 else l//2
+    if l % 2 == 1:
+        nrows += 1
+    ncols = 1 if l == 1 else 2
+
+    fig, axs = plt.subplots(nrows=nrows, ncols=ncols,
+                            squeeze=False, constrained_layout=True)
     fig.suptitle(title)
 
     for i, (l, e, f) in enumerate(zip(file_logbooks, file_experiments, file_fitness)):
@@ -15,11 +26,15 @@ def show_multiple_graphs(file_logbooks, file_experiments,
         gen = l.select("gen")
         avgs = l.select("avg")
 
-        ax[i].plot(gen, avgs, "r-")
+        row = i//2
+        col = 0 if i % 2 == 0 else 1
 
-        ax[i].set_title(title, fontsize=6)
-        ax[i].set_xlabel("Generation")
-        ax[i].set_ylabel("Fitness", color="b")
+        color = c(i)
+        axs[row, col].plot(gen, avgs, color)
+
+        axs[row, col].set_title(title, fontsize=6)
+        axs[row, col].set_xlabel("Generation")
+        axs[row, col].set_ylabel("Fitness", color=color)
 
         plt.draw()
 
