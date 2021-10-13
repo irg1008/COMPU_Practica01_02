@@ -8,11 +8,11 @@ def config_alg(toolbox, config, rides, TOURNSIZE, INDPB):
 
     toolbox.register("select", tools.selTournament, tournsize=int(TOURNSIZE))
     toolbox.register("mate", tools.cxOnePoint)
-    toolbox.register("mutate", tools.mutFlipBit, indpb=INDPB)
+    toolbox.register("mutate", tools.mutShuffleIndexes, indpb=INDPB)
     toolbox.register("evaluate", eval)
 
 
-def evolve(toolbox, stats, config, rides, CXPB=0.5, MUTPB=0.0, NGEN=20, NIND=10, TOURNSIZE=3, INDPB=0.2):
+def evolve(toolbox, stats, config, rides, CXPB=1.0, MUTPB=0.075, NGEN=100, NIND=150, TOURNSIZE=3, INDPB=0.05):
     config_alg(toolbox, config, rides, TOURNSIZE, INDPB)
 
     pop = toolbox.population(n=int(NIND))

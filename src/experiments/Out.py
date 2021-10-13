@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def show_multiple_graphs(file_logbooks, file_experiments,
@@ -11,7 +10,7 @@ def show_multiple_graphs(file_logbooks, file_experiments,
     l = len(file_logbooks)
 
     nrows = 1 if l == 1 else l//2
-    if l % 2 == 1:
+    if l % 2 == 1 and l > 1:
         nrows += 1
     ncols = 1 if l == 1 else 2
 
@@ -37,5 +36,6 @@ def show_multiple_graphs(file_logbooks, file_experiments,
         axs[row, col].set_ylabel("Fitness", color=color)
 
         plt.draw()
+
 
     plt.show()
