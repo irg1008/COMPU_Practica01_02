@@ -2,7 +2,6 @@ from deap import tools
 from deap import algorithms
 from EvalSol import eval_ind
 
-
 def config_alg(toolbox, config, rides, TOURNSIZE, INDPB):
     def eval(ind): return eval_ind(ind, config, rides)
 
@@ -12,7 +11,8 @@ def config_alg(toolbox, config, rides, TOURNSIZE, INDPB):
     toolbox.register("evaluate", eval)
 
 
-def evolve(toolbox, stats, config, rides, CXPB=1.0, MUTPB=0.075, NGEN=100, NIND=150, TOURNSIZE=3, INDPB=0.05):
+def evolve(toolbox, stats, config, rides, CXPB=0.95, MUTPB=0.075, NGEN=15, NIND=50, TOURNSIZE=3, INDPB=0.05):
+    
     config_alg(toolbox, config, rides, TOURNSIZE, INDPB)
 
     pop = toolbox.population(n=int(NIND))
