@@ -1,0 +1,1 @@
+python -m scoop $args[0]

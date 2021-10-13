@@ -18,7 +18,7 @@ def config_experiments():
 
     NGEN = [100] # Número de generaciones.
 
-    CXPB = [1]  # Probabilidad de cruce.
+    CXPB = [0.5, 1.0]  # Probabilidad de cruce.
     MUTPB = [0.075] # Probabilidad de mutación.
     NIND = [150] # Número de individuos en población.
 
@@ -48,7 +48,7 @@ def execute(experiments):
 
         config, rides, file_name = init_data(nproblem)
         toolbox = config_population(config)
-
+    
         logbooks[nproblem] = []
         fitness[nproblem] = []
         files[nproblem] = file_name
