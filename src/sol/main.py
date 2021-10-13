@@ -10,10 +10,11 @@ from time import time
 
 
 def main():
-    start = time()
 
     config, rides, file_name = init_data()
 
+    start = time()
+    
     config_create()
 
     toolbox = config_population(config)
