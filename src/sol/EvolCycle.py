@@ -3,26 +3,33 @@ from deap import algorithms
 from EvalSol import eval_ind
 
 
-def config_alg(toolbox, config, rides, TOURNSIZE, INDPB):
-    def eval(ind): return eval_ind(ind, config, rides)
+def config_alg(toolbox, config, rides, adapted, INDPB):
+    def eval(ind): return eval_ind(ind, config, rides, adapted)
 
     F = config[0]
 
-    toolbox.register("select", tools.selTournament, tournsize=int(TOURNSIZE))
+    toolbox.register("select", tools.selNSGA2)
     toolbox.register("mate", tools.cxOnePoint)
     toolbox.register("mutate", tools.mutUniformInt, indpb=INDPB, low=0, up=F-1)
     toolbox.register("evaluate", eval)
 
 
-def evolve(toolbox, stats, config, rides, CXPB=0.95, MUTPB=0.075, NGEN=15, NIND=50, TOURNSIZE=3, INDPB=0.05):
+def get_pop(toolbox, NIND=300):
+    return toolbox.population(n=int(NIND))
 
-    config_alg(toolbox, config, rides, TOURNSIZE, INDPB)
 
-    pop = toolbox.population(n=int(NIND))
+def evolve(toolbox, pop, stats, config, rides, adapted, MU=50, LAMBDA=50*2, CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2):
+    MU = int(MU)
+    LAMBDA = int(LAMBDA)
+    NGEN = int(NGEN)
 
-    pop, logbook = algorithms.eaSimple(
-        pop, toolbox, CXPB, MUTPB, int(NGEN), stats, verbose=False)
+    config_alg(toolbox, config, rides, adapted, INDPB)
+
+    hof = tools.ParetoFront()
+
+    pop, logbook = algorithms.eaMuPlusLambda(
+        pop, toolbox, MU, LAMBDA, CXPB, MUTPB, NGEN, stats, halloffame=hof, verbose=False)
 
     best_sol = tools.selBest(pop, 1)[0]
 
-    return logbook, best_sol, pop
+    return logbook, best_sol, pop, hof

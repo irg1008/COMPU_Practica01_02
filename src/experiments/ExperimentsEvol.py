@@ -1,91 +1,76 @@
-
 import numpy as np
-from Out import show_multiple_graphs
-
 import sys
 sys.path.append("..")
 sys.path.append("../sol")
-
 from sol.EvalSol import eval_ind
 from sol.HashData import init_data
 from sol.ConfigSol import config_population, config_create
 from sol.EvolStats import config_stats
-from sol.EvolCycle import evolve
+from sol.EvolCycle import evolve, get_pop
+from sol.Out import plot_dif_scales, get_pareto_front
 
 
 def config_experiments():
-    NPROBLEM = [2, 3, 5]
 
-    NGEN = [100] # Número de generaciones.
+    NPROBLEM = [2, 3, 4]
 
-    CXPB = [0.5, 1.0]  # Probabilidad de cruce.
-    MUTPB = [0.075] # Probabilidad de mutación.
-    NIND = [150] # Número de individuos en población.
+    NGEN = [10]  # Número de generaciones.
+    CXPB = [0.85]  # Probabilidad de cruce.
+    MUTPB = [0.15]  # Probabilidad de mutación.
+    NIND = [300]  # Número de individuos en población.
+    INDPB = [0.2]  # Probabilidad independiente de mutar cada atributo.
 
-    TOURNSIZE = [3] # Número de invividuos participando en cada torneo.
-    INDPB = [0.05] # Probabilidad independiente de mutar cada atributo.
-
-    combinations = np.array(np.meshgrid(
-        NGEN, CXPB, MUTPB, NIND, TOURNSIZE, INDPB)).T.reshape(-1, 6)
+    values_to_combine = [NGEN, CXPB, MUTPB, NIND, INDPB]
+    combinations = np.array(np.meshgrid(*values_to_combine)
+                            ).T.reshape(-1, len(values_to_combine))
 
     experiments = {}
-
     for i in NPROBLEM:
         experiments[i] = combinations
 
     return experiments
 
 
-def execute(experiments):
-    logbooks = {}
-    fitness = {}
-    files = {}
-
+def execute(experiments, plot=False):
     config_create()
+
+    PER_MU = 0.2
 
     for nproblem in experiments:
         problem = experiments[nproblem]
 
-        config, rides, file_name = init_data(nproblem)
+        config, rides, adapted, file_name = init_data(nproblem)
         toolbox = config_population(config)
-    
-        logbooks[nproblem] = []
-        fitness[nproblem] = []
-        files[nproblem] = file_name
 
         for exp in problem:
-            NGEN, CXPB, MUTPB, NIND, TOURNSIZE, INDPB = exp
+            NGEN, CXPB, MUTPB, NIND, INDPB = exp
+
+            # Número de individuos que se seleccionan en cada generación.
+            MU = NIND * PER_MU
+            LAMBDA = MU * 2  # Number of children produced in each generation.
 
             print(
-                f"Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, nind: {NIND}, tournsize: {TOURNSIZE}")
+                f"Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, lambda: {LAMBDA}, mu: {MU}")
 
             stats = config_stats()
-            logbook, best_sol, _ = evolve(toolbox, stats, config, rides,
-                                          CXPB, MUTPB, NGEN, NIND, TOURNSIZE, INDPB)
 
-            best_fitness, = eval_ind(best_sol, config, rides)
+            pop = get_pop(toolbox)
 
-            logbooks[nproblem].append(logbook)
-            fitness[nproblem].append(best_fitness)
+            if plot:
+                get_pareto_front(pop, config, rides, adapted)
 
-    return logbooks, fitness, files
+            logbook, _, pop, _ = evolve(
+                toolbox, pop, stats, config, rides, adapted,
+                MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB)
 
-
-def show_graphs(logbooks, fitness, experiments, files):
-    for n in logbooks:
-        file_logbooks = logbooks[n]
-        file_fitness = fitness[n]
-        file_name = files[n]
-        file_experiments = experiments[n]
-
-        show_multiple_graphs(file_logbooks, file_experiments,
-                            file_fitness, title=file_name)
+            if plot:
+                plot_dif_scales(logbook)
+                get_pareto_front(pop, config, rides, adapted)
 
 
 def main():
     experiments = config_experiments()
-    logbooks, fitness, files = execute(experiments)
-    show_graphs(logbooks, fitness, experiments, files)
+    execute(experiments, plot=True)
 
 
 if __name__ == "__main__":
