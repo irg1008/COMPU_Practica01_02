@@ -2,12 +2,11 @@ import numpy as np
 import sys
 sys.path.append("..")
 sys.path.append("../sol")
-from sol.EvalSol import eval_ind
+
 from sol.HashData import init_data
 from sol.ConfigSol import config_population, config_create
 from sol.EvolStats import config_stats
-from sol.EvolCycle import evolve, get_pop
-from sol.Out import plot_dif_scales, get_pareto_front
+from sol.main import execute
 
 
 def config_experiments():
@@ -31,7 +30,7 @@ def config_experiments():
     return experiments
 
 
-def execute(experiments, plot=False):
+def execute_experiments(experiments):
     config_create()
 
     PER_MU = 0.2
@@ -41,6 +40,7 @@ def execute(experiments, plot=False):
 
         config, rides, adapted, file_name = init_data(nproblem)
         toolbox = config_population(config)
+        stats = config_stats()
 
         for exp in problem:
             NGEN, CXPB, MUTPB, NIND, INDPB = exp
@@ -49,28 +49,13 @@ def execute(experiments, plot=False):
             MU = NIND * PER_MU
             LAMBDA = MU * 2  # Number of children produced in each generation.
 
-            print(
-                f"Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, lambda: {LAMBDA}, mu: {MU}")
-
-            stats = config_stats()
-
-            pop = get_pop(toolbox)
-
-            if plot:
-                get_pareto_front(pop, config, rides, adapted)
-
-            logbook, _, pop, _ = evolve(
-                toolbox, pop, stats, config, rides, adapted,
-                MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB)
-
-            if plot:
-                plot_dif_scales(logbook)
-                get_pareto_front(pop, config, rides, adapted)
+            execute(config, toolbox, stats, rides, adapted,
+                    file_name, MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB)
 
 
 def main():
     experiments = config_experiments()
-    execute(experiments, plot=True)
+    execute_experiments(experiments)
 
 
 if __name__ == "__main__":

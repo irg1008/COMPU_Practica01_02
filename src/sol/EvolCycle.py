@@ -14,7 +14,7 @@ def config_alg(toolbox, config, rides, adapted, INDPB):
     toolbox.register("evaluate", eval)
 
 
-def get_pop(toolbox, NIND=300):
+def get_pop(toolbox, NIND):
     return toolbox.population(n=int(NIND))
 
 

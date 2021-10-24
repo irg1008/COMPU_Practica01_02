@@ -9,6 +9,10 @@ plt.style.use(plt_styles[7])
 dir = path.dirname(__file__)
 
 
+def log(msg):
+    print(f"----> {msg}")
+
+
 def output_solution(sol, file_name):
     outDirPath = path.join(dir, "../../Output/")
     outFilePath = outDirPath + file_name.strip(".in") + ".out"
@@ -27,8 +31,7 @@ def output_solution(sol, file_name):
 
             f.write("\n")
 
-    print(
-        f"Output file for {file_name} has been created in output folder with same name.")
+    log(f"Output file for {file_name} has been created in output folder with same name.")
 
 
 def col(a, *n_cols):
