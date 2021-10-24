@@ -50,7 +50,7 @@ def execute_experiments(experiments):
             LAMBDA = MU * 2  # Number of children produced in each generation.
 
             execute(config, toolbox, stats, rides, adapted,
-                    file_name, MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB)
+                    file_name, MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB, plot=True)
 
 
 def main():

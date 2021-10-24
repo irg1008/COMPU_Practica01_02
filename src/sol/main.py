@@ -9,9 +9,10 @@ from time import time
 
 
 def execute(config, toolbox, stats, rides, adapted, file_name,
-            MU=50, LAMBDA=50*2, CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2, NIND=300):
+            MU=50, LAMBDA=50*2, CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2, NIND=300, plot=True):
 
-    print(f"* Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, lambda: {LAMBDA}, mu: {MU}")
+    title = f"* Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, lambda: {LAMBDA}, mu: {MU}"
+    print(title)
 
     # Start timing.
     start = time()
@@ -20,8 +21,9 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     pop = get_pop(toolbox, NIND)
 
     # Pareto front from first population.
-    log("Printing pareto front for first population.")
-    get_pareto_front(pop, config, rides, adapted)
+    if plot:
+        log("Printing pareto front for first population.")
+        get_pareto_front(pop, config, rides, adapted, title)
 
     # Evolve algorithm.
     log("Evolving algorithm.")
@@ -37,12 +39,14 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     end = time()
 
     # Plot fitness and penalty.
-    log("Printing fitness and penalty over generations.")
-    plot_dif_scales(logbook)
+    if plot:
+        log("Printing fitness and penalty over generations.")
+        plot_dif_scales(logbook, title)
 
     # Pareto front from last population.
-    log("Printing pareto front for last population.")
-    get_pareto_front(pop, config, rides, adapted)
+    if plot:
+        log("Printing pareto front for last population.")
+        get_pareto_front(pop, config, rides, adapted, title)
 
     # Output file out.
     output_solution(best_sol, file_name)

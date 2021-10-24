@@ -42,7 +42,7 @@ def col(a, *n_cols):
     return cols
 
 
-def get_pareto_front(pop, config, rides, adapted):
+def get_pareto_front(pop, config, rides, adapted, title="Pareto Front"):
     fitness = []
     penalty = []
     pairs = []
@@ -74,11 +74,12 @@ def get_pareto_front(pop, config, rides, adapted):
 
     legend = plt.legend(loc="best", shadow=True, edgecolor="black",
                         borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
+    plt.title(title)
     plt.setp(legend.get_texts(), color="black")
     plt.show()
 
 
-def plot_dif_scales(lb):
+def plot_dif_scales(lb, title="Fitness and Penalty"):
     gen = lb.select("gen")
     avgs = lb.select("avg")
     mins = lb.select("min")
@@ -110,5 +111,7 @@ def plot_dif_scales(lb):
     ax2.tick_params(axis="y", labelcolor=c_ax2)
     ax2.set_ylabel("Penalty", color=c_ax2)
     ax2.grid(alpha=grid_alpha, color=c_ax2)
+
+    plt.title(title)
 
     plt.show()
