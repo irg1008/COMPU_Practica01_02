@@ -1,0 +1,3 @@
+scoop
+deap
+matplotlib
