@@ -1,3 +1,0 @@
-scoop
-deap
-matplotlib

@@ -8,9 +8,10 @@ from time import time
 
 
 def execute(config, toolbox, stats, rides, adapted, file_name,
-            CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2, TOURNSIZE=3, NIND=300, plot=True):
+            CXPB=0.85, MUTPB=0.15, NGEN=30, INDPB=0.2, TOURNSIZE=3, NIND=100, plot=True):
 
     title = f"* Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, tournsize: {TOURNSIZE}"
+    print(title)
 
     # Start timing.
     start = time()
@@ -21,7 +22,7 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     # Evolve algorithm.
     log("Evolving algorithm.")
     logbook, best_sol, pop = evolve(
-        toolbox, pop, stats, config, rides, adapted, TOURNSIZE, CXPB, MUTPB, NGEN, INDPB)
+        toolbox, pop, stats, config, rides, adapted, CXPB, MUTPB, NGEN, INDPB, TOURNSIZE)
     log(f"Best sol fitness and penalty: {eval_ind(best_sol, config, rides, adapted)}")
 
     # Register map for multiproccesing.
@@ -32,8 +33,8 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
 
     # Plot penalty and fitness.
     if plot:
-        plot_pen_fitness(logbook, title)
         log("Printing penalty or fitness over generations.")
+        plot_pen_fitness(logbook, title)
 
     # Output file out.
     output_solution(best_sol, file_name)

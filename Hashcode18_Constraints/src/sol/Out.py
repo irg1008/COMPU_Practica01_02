@@ -33,7 +33,7 @@ def output_solution(sol, file_name):
     log(f"Output file for {file_name} has been created in output folder with same name.")
 
 
-def plot_pen_fitness(lb, title="Penalty over generatons"):
+def plot_pen_fitness(lb, title="Penalty over generations"):
     gen = lb.select("gen")
     avgs = lb.select("avg")
     maxs = lb.select("max")
@@ -42,10 +42,14 @@ def plot_pen_fitness(lb, title="Penalty over generatons"):
     _, ax = plt.subplots()
 
     ax.plot(gen, avgs, "r-", label="Average Fitness")
-    ax.plot(gen, maxs, "r-", label="Average Fitness")
-    ax.plot(gen, mins, "r-", label="Average Fitness")
+    ax.plot(gen, maxs, "b-", label="Max. Fitness")
+    ax.plot(gen, mins, "g-", label="Min. Fitness")
     ax.set_xlabel("Generation")
-    ax.set_ylabel("Fitness", color="b")
+    ax.set_ylabel("Fitness and Penalty", color="b")
     ax.set_title(title)
-
-    plt.plot()
+    
+    legend = plt.legend(loc="best", shadow=True, edgecolor="black",
+                    borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
+    
+    plt.setp(legend.get_texts(), color="black")
+    plt.show()
