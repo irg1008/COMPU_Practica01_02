@@ -1,18 +1,16 @@
 from ConfigSol import config_population, config_create
 from EvolStats import config_stats
 from EvolCycle import evolve, get_pop, eval_ind
-from Out import output_solution, get_pareto_front, plot_dif_scales, log
+from Out import output_solution, plot_pen_fitness, log
 from HashData import init_data
 from scoop import futures
-
 from time import time
 
 
 def execute(config, toolbox, stats, rides, adapted, file_name,
-            MU=50, LAMBDA=50*2, CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2, NIND=300, plot=True):
+            CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2, TOURNSIZE=3, NIND=300, plot=True):
 
-    title = f"* Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, lambda: {LAMBDA}, mu: {MU}"
-    print(title)
+    title = f"* Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, tournsize: {TOURNSIZE}"
 
     # Start timing.
     start = time()
@@ -20,16 +18,10 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     # Get initial population.
     pop = get_pop(toolbox, NIND)
 
-    # Pareto front from first population.
-    if plot:
-        log("Printing pareto front for first population.")
-        get_pareto_front(pop, config, rides, adapted, title)
-
     # Evolve algorithm.
     log("Evolving algorithm.")
-    logbook, best_sol, pop, _ = evolve(
-        toolbox, pop, stats, config, rides, adapted,
-        MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB)
+    logbook, best_sol, pop = evolve(
+        toolbox, pop, stats, config, rides, adapted, TOURNSIZE, CXPB, MUTPB, NGEN, INDPB)
     log(f"Best sol fitness and penalty: {eval_ind(best_sol, config, rides, adapted)}")
 
     # Register map for multiproccesing.
@@ -38,15 +30,10 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     # Stop timing.
     end = time()
 
-    # Plot fitness and penalty.
+    # Plot penalty and fitness.
     if plot:
-        log("Printing fitness and penalty over generations.")
-        plot_dif_scales(logbook, title)
-
-    # Pareto front from last population.
-    if plot:
-        log("Printing pareto front for last population.")
-        get_pareto_front(pop, config, rides, adapted, title)
+        plot_pen_fitness(logbook, title)
+        log("Printing penalty or fitness over generations.")
 
     # Output file out.
     output_solution(best_sol, file_name)

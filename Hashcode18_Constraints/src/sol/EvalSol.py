@@ -2,6 +2,7 @@ import numpy as np
 
 config, rides, adapted = [], [], []
 
+
 def sort_rides(car_rides):
     def sort_ride(ride):
         a, b, x, y, s, f, _ = ride
@@ -16,11 +17,11 @@ def sort_rides(car_rides):
 
 def get_rides_from_ind(individual):
     F = config[0]
-    
-    vehicles_rides = np.full(F, None)
 
-    for i, vehicle in enumerate(individual):
-        v_r = vehicles_rides[vehicle]
+    cars_rides = np.full(F, None)
+
+    for i, car in enumerate(individual):
+        v_r = cars_rides[car]
 
         if v_r is None:
             v_r = []
@@ -28,33 +29,18 @@ def get_rides_from_ind(individual):
         ride = rides[i]
         v_r.append([i, ride])
 
-        vehicles_rides[vehicle] = v_r
+        cars_rides[car] = v_r
 
-    return vehicles_rides
+    return cars_rides
 
 
 def dis(a, b): return np.abs(a[0] - b[0]) + np.abs(a[1]-b[1])
 
-def get_penalty(adapted_car, adapted_ride, B):
-    if adapted_car == 0 and adapted_ride == 0:
-        return - B*0.2
-    
-    if adapted_car == 0 and adapted_ride == 1:
-        return B
 
-    if adapted_car == 1 and adapted_ride == 0:
-        return B*0.5
-
-
-    if adapted_car == 1 and adapted_ride == 1:
-        return - B*0.4
-
-
-def calc_fitness(car, car_rides):
+def calc_fitness(car_rides):
     _, _, B, T = config
-    
+
     fitness = 0
-    penalty = 0
     step = 0
     pos = [0, 0]
 
@@ -65,11 +51,6 @@ def calc_fitness(car, car_rides):
         a, b, x, y, earliest_start, latest_finish, adapted_ride = ride
         origin = [a, b]
         destiny = [x, y]
-
-        adapted_car = adapted[car]
-
-        # 0.- Set penalty of adaptability of car/ride.
-        penalty += get_penalty(adapted_car, adapted_ride, B)
 
         # 1.- Go to origin.
         step += dis(pos, origin)
@@ -94,7 +75,7 @@ def calc_fitness(car, car_rides):
         if step > T:
             break
 
-    return fitness, penalty
+    return fitness
 
 
 def eval_ind(ind, new_config, new_rides, new_adapted):
@@ -102,16 +83,13 @@ def eval_ind(ind, new_config, new_rides, new_adapted):
     config = new_config
     rides = new_rides
     adapted = new_adapted
-    
+
     all_rides = get_rides_from_ind(ind)
 
     fitness = 0
-    penalty = 0
 
-    for car, car_rides in enumerate(all_rides):
+    for _, car_rides in enumerate(all_rides):
         if car_rides is not None:
-            _fitness, _penalty = calc_fitness(car, car_rides)
-            fitness += _fitness
-            penalty += _penalty
+            fitness += calc_fitness(car_rides)
 
-    return fitness, penalty
+    return fitness,

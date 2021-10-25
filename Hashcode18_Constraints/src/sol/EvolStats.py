@@ -5,9 +5,9 @@ from deap import tools
 
 def config_stats():
     stats = tools.Statistics(lambda ind: ind.fitness.values)
-    stats.register("min", np.min, axis=0)
-    stats.register("max", np.max, axis=0)
-    stats.register("std", np.std, axis=0)
-    stats.register("avg", np.average, axis=0)
+    stats.register("min", np.min)
+    stats.register("max", np.max)
+    stats.register("std", np.std)
+    stats.register("avg", np.average)
 
     return stats

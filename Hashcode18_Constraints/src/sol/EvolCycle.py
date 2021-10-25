@@ -3,33 +3,60 @@ from deap import algorithms
 from EvalSol import eval_ind
 
 
-def config_alg(toolbox, config, rides, adapted, INDPB):
+def get_penalty(ind, rides, adapted):
+    pen = 0
+
+    for i_ride, i_car in enumerate(ind):
+        adapted_ride = rides[i_ride][-1]
+        adapted_car = adapted[i_car]
+
+        if adapted_car == 0 and adapted_ride == 1:
+            pen += 1
+
+    return pen
+
+
+def distance(ind, rides, adapted):
+    pen = get_penalty(ind, rides, adapted)
+    return pen
+
+
+def feasible(ind, rides, adapted):
+    pen = get_penalty(ind, rides, adapted)
+    return pen == 0
+
+
+def config_alg(toolbox, config, rides, adapted, INDPB, TOURNSIZE):
     def eval(ind): return eval_ind(ind, config, rides, adapted)
+    def feas(ind): return feasible(ind, rides, adapted)
+    def dis(ind): return distance(ind, rides, adapted)
 
     F = config[0]
 
-    toolbox.register("select", tools.selNSGA2)
+    toolbox.register("select", tools.selTournament, tournsize=TOURNSIZE)
     toolbox.register("mate", tools.cxOnePoint)
     toolbox.register("mutate", tools.mutUniformInt, indpb=INDPB, low=0, up=F-1)
     toolbox.register("evaluate", eval)
+
+    DISTANCE_OFFSET = 0
+
+    toolbox.decorate("evaluate", tools.DeltaPenality(
+        feas, DISTANCE_OFFSET, dis))
 
 
 def get_pop(toolbox, NIND):
     return toolbox.population(n=int(NIND))
 
 
-def evolve(toolbox, pop, stats, config, rides, adapted, MU=50, LAMBDA=50*2, CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2):
-    MU = int(MU)
-    LAMBDA = int(LAMBDA)
+def evolve(toolbox, pop, stats, config, rides, adapted, CXPB=0.85, MUTPB=0.15, NGEN=10, INDPB=0.2, TOURNSIZE=3):
     NGEN = int(NGEN)
+    TOURNSIZE = int(TOURNSIZE)
 
-    config_alg(toolbox, config, rides, adapted, INDPB)
+    config_alg(toolbox, config, rides, adapted, INDPB, TOURNSIZE)
 
-    hof = tools.ParetoFront()
-
-    pop, logbook = algorithms.eaMuPlusLambda(
-        pop, toolbox, MU, LAMBDA, CXPB, MUTPB, NGEN, stats, halloffame=hof, verbose=False)
+    pop, logbook = algorithms.eaSimple(
+        pop, toolbox, CXPB, MUTPB, NGEN, stats, verbose=False)
 
     best_sol = tools.selBest(pop, 1)[0]
 
-    return logbook, best_sol, pop, hof
+    return logbook, best_sol, pop

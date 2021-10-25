@@ -4,7 +4,7 @@ from deap import base, creator, tools
 
 def config_create():
     if not hasattr(creator, "Fitness"):
-        creator.create("FitnessMax", base.Fitness, weights=(1.0, -1.0))
+        creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 
     if not hasattr(creator, "Individual"):
         creator.create("Individual", list, fitness=creator.FitnessMax)
