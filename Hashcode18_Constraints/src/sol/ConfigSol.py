@@ -3,7 +3,7 @@ from deap import base, creator, tools
 
 
 def config_create():
-    if not hasattr(creator, "Fitness"):
+    if not hasattr(creator, "FitnessMax"):
         creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 
     if not hasattr(creator, "Individual"):

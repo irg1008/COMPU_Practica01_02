@@ -35,19 +35,10 @@ def get_rides_from_ind(individual):
 
 def dis(a, b): return np.abs(a[0] - b[0]) + np.abs(a[1]-b[1])
 
-def get_penalty(adapted_car, adapted_ride, B):
-    if adapted_car == 0 and adapted_ride == 0:
-        return - B*0.2
-    
+def get_penalty(adapted_car, adapted_ride):  
     if adapted_car == 0 and adapted_ride == 1:
-        return B
-
-    if adapted_car == 1 and adapted_ride == 0:
-        return B*0.5
-
-
-    if adapted_car == 1 and adapted_ride == 1:
-        return - B*0.4
+        return 1
+    return 0
 
 
 def calc_fitness(car, car_rides):
@@ -69,7 +60,7 @@ def calc_fitness(car, car_rides):
         adapted_car = adapted[car]
 
         # 0.- Set penalty of adaptability of car/ride.
-        penalty += get_penalty(adapted_car, adapted_ride, B)
+        penalty += get_penalty(adapted_car, adapted_ride)
 
         # 1.- Go to origin.
         step += dis(pos, origin)

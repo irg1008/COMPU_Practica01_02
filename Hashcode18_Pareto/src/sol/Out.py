@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt_styles = plt.style.available
 plt.style.use(plt_styles[7])
+plt.rcParams["axes.titlesize"] = "medium"
 
 dir = path.dirname(__file__)
 
@@ -42,6 +43,12 @@ def col(a, *n_cols):
     return cols
 
 
+def get_nice_legend():
+    legend = plt.legend(loc="best", shadow=True, edgecolor="black",
+                        borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
+    plt.setp(legend.get_texts(), color="black")
+
+
 def get_pareto_front(pop, config, rides, adapted, title="Pareto Front"):
     fitness = []
     penalty = []
@@ -59,7 +66,7 @@ def get_pareto_front(pop, config, rides, adapted, title="Pareto Front"):
     front = [sorted_pairs[0]]
 
     for pair in sorted_pairs[1:]:
-        if pair[1] <= front[-1][1]:
+        if pair[1] < front[-1][1]:
             front.append(pair)
 
     f_front = [f for f, _ in front]
@@ -67,19 +74,18 @@ def get_pareto_front(pop, config, rides, adapted, title="Pareto Front"):
 
     _, ax = plt.subplots(figsize=(8, 6))
     ax.scatter(fitness, penalty, alpha=0.6, label="Population")
-    ax.plot(f_front, p_front, color="b", alpha=0.5, label="Pareto Front")
+    ax.plot(f_front, p_front, "-o", color="b",
+            alpha=0.5, label="Pareto Front")
     ax.tick_params(axis="x", rotation=30)
     ax.set_ylabel("Penalty")
     ax.set_xlabel("Fitness")
 
-    legend = plt.legend(loc="best", shadow=True, edgecolor="black",
-                        borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
+    get_nice_legend()
     plt.title(title)
-    plt.setp(legend.get_texts(), color="black")
     plt.show()
 
 
-def plot_dif_scales(lb, title="Fitness and Penalty"):
+def plot_dif_scales(lb, title="Fitness and Penalty", separated=True):
     gen = lb.select("gen")
     avgs = lb.select("avg")
     mins = lb.select("min")
@@ -89,29 +95,54 @@ def plot_dif_scales(lb, title="Fitness and Penalty"):
     fit_maxs, pen_maxs = col(maxs, 0, 1)
     fit_mins, pen_mins = col(mins, 0, 1)
 
-    _, ax = plt.subplots(figsize=(6, 4))
-
-    c_ax, c_ax2 = ["r", "b"]
     linewidth = 2
     line_alpha = 0.6
     grid_alpha = 0.1
 
-    ax.plot(gen, fit_avgs, color=c_ax, linewidth=linewidth, alpha=line_alpha)
-    ax.plot(gen, fit_maxs, color=c_ax, linewidth=linewidth, alpha=line_alpha)
-    ax.plot(gen, fit_mins, color=c_ax, linewidth=linewidth, alpha=line_alpha)
-    ax.tick_params(axis="y", labelcolor=c_ax)
-    ax.set_xlabel("Generations")
-    ax.set_ylabel("Fitness", color=c_ax)
-    ax.grid(alpha=grid_alpha, color=c_ax)
+    fit_label = "Fitness"
+    pen_label = "Penalty"
+    x_label = "Generations"
 
-    ax2 = ax.twinx()
-    ax2.plot(gen, pen_avgs, color=c_ax2, linewidth=linewidth, alpha=line_alpha)
-    ax2.plot(gen, pen_maxs, color=c_ax2, linewidth=linewidth, alpha=line_alpha)
-    ax2.plot(gen, pen_mins, color=c_ax2, linewidth=linewidth, alpha=line_alpha)
-    ax2.tick_params(axis="y", labelcolor=c_ax2)
-    ax2.set_ylabel("Penalty", color=c_ax2)
-    ax2.grid(alpha=grid_alpha, color=c_ax2)
+    avg_label = "Average"
+    max_label = "Maxs"
+    min_label = "Mins"
 
-    plt.title(title)
+    size = (6, 4)
 
+    c_max, c_avg, c_min = ["r", "g", "b"]
+
+    if separated:
+        _, ax = plt.subplots(2, figsize=size)
+        ax1, ax2 = ax[0], ax[1]
+    else:
+        _, ax = plt.subplots(figsize=size)
+        ax1, ax2 = ax, ax.twinx()
+
+    ax1.set_title(title)
+
+    ax1.set_xlabel(x_label)
+    ax1.set_ylabel(fit_label)
+    ax1.tick_params(axis="y")
+    ax1.grid(alpha=grid_alpha)
+
+    ax2.set_xlabel(x_label)
+    ax2.set_ylabel(pen_label)
+    ax2.tick_params(axis="y")
+    ax2.grid(alpha=grid_alpha)
+
+    ax1.plot(gen, fit_avgs, color=c_avg,
+             linewidth=linewidth, alpha=line_alpha, label=avg_label)
+    ax1.plot(gen, fit_maxs, color=c_max,
+             linewidth=linewidth, alpha=line_alpha, label=max_label)
+    ax1.plot(gen, fit_mins, color=c_min,
+             linewidth=linewidth, alpha=line_alpha, label=min_label)
+
+    ax2.plot(gen, pen_avgs, color=c_avg,
+             linewidth=linewidth, alpha=line_alpha, label=avg_label)
+    ax2.plot(gen, pen_maxs, color=c_max,
+             linewidth=linewidth, alpha=line_alpha, label=max_label)
+    ax2.plot(gen, pen_mins, color=c_min,
+             linewidth=linewidth, alpha=line_alpha, label=min_label)
+
+    get_nice_legend()
     plt.show()

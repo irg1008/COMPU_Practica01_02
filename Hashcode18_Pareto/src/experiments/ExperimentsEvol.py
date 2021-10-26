@@ -11,7 +11,7 @@ from sol.main import execute
 
 def config_experiments():
 
-    NPROBLEM = [2, 3, 4]
+    NPROBLEM = [1, 2, 3, 4]
 
     NGEN = [10]  # Número de generaciones.
     CXPB = [0.85]  # Probabilidad de cruce.
@@ -33,7 +33,7 @@ def config_experiments():
 def execute_experiments(experiments):
     config_create()
 
-    PER_MU = 0.2
+    PER_MU = 1
 
     for nproblem in experiments:
         problem = experiments[nproblem]
