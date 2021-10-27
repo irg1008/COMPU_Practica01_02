@@ -8,7 +8,7 @@ import matplotlib.animation as ani
 
 plt_styles = plt.style.available
 plt.style.use(plt_styles[7])
-plt.rcParams["axes.titlesize"] = "small"
+plt.rcParams["axes.titlesize"] = "medium"
 
 dir = path.dirname(__file__)
 
@@ -48,14 +48,12 @@ def col(a, *n_cols):
 
 def get_nice_legend(ax):
     legend = ax.legend(loc="best", shadow=True, edgecolor="black",
-                        borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
+                       borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
     plt.setp(legend.get_texts(), color="black")
 
 
-def show_or_save(file_name, title):
-    if file_name is None:
-        plt.show()
-    else:
+def show_or_save(plot, file_name, title):
+    if not plot and file_name is not None:
         folder = f"../../Plots/{file_name}"
 
         exists = os.path.exists(folder)
@@ -63,6 +61,8 @@ def show_or_save(file_name, title):
             os.mkdir(folder)
 
         plt.savefig(f"{folder}/{title}.png")
+    else:
+        plt.show()
 
 # def anim_plot(a, b):
 #     fig, ax = plt.subplots()
@@ -104,7 +104,7 @@ def get_pareto_front(pop, config, rides, adapted):
     return fitness, penalty, f_front, p_front
 
 
-def plot_pareto_front(init_pop, pop, config, rides, adapted, title="Pareto Front", file_name=None):
+def plot_pareto_front(plot, init_pop, pop, config, rides, adapted, title="Pareto Front", file_name=None):
     fitness, penalty, f_front, p_front = get_pareto_front(
         pop, config, rides, adapted)
     init_fitness, init_penalty, init_f_front, init_p_front = get_pareto_front(
@@ -126,7 +126,6 @@ def plot_pareto_front(init_pop, pop, config, rides, adapted, title="Pareto Front
     dots_alpha = 0.6
 
     c = "b"
-    
 
     ax1.scatter(init_fitness, init_penalty,
                 alpha=dots_alpha, label=label_first)
@@ -147,10 +146,10 @@ def plot_pareto_front(init_pop, pop, config, rides, adapted, title="Pareto Front
 
     fig.suptitle(title)
 
-    show_or_save(file_name, "pareto")
+    show_or_save(plot, file_name, "pareto")
 
 
-def plot_dif_scales(lb, title="Fitness and Penalty", separated=True, file_name=None):
+def plot_dif_scales(plot, lb, title="Fitness and Penalty", separated=True, file_name=None):
     gen = lb.select("gen")
     avgs = lb.select("avg")
     mins = lb.select("min")
@@ -211,4 +210,4 @@ def plot_dif_scales(lb, title="Fitness and Penalty", separated=True, file_name=N
              linewidth=linewidth, alpha=line_alpha, label=min_label)
     get_nice_legend(ax2)
 
-    show_or_save(file_name, "fitness-penalty")
+    show_or_save(plot, file_name, "fitness-penalty")

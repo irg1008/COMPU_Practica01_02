@@ -12,6 +12,7 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
 
     title = f"* Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, tournsize: {TOURNSIZE}"
     print(title)
+    file_title = f"{file_name}_CXPB-{CXPB}_MUTPB-{MUTPB}"
 
     # Start timing.
     start = time()
@@ -23,7 +24,7 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     log("Evolving algorithm.")
     logbook, best_sol, pop = evolve(
         toolbox, pop, stats, config, rides, adapted, CXPB, MUTPB, NGEN, INDPB, TOURNSIZE)
-    log(f"Best sol fitness and penalty: {eval_ind(best_sol, config, rides, adapted)}")
+    log(f"Best sol fitness: {eval_ind(best_sol, config, rides, adapted)}")
 
     # Register map for multiproccesing.
     # toolbox.register("map", futures.map)
@@ -32,9 +33,8 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     end = time()
 
     # Plot penalty and fitness.
-    if plot:
-        log("Printing penalty or fitness over generations.")
-        plot_pen_fitness(logbook, title)
+    log("Printing penalty or fitness over generations.")
+    plot_pen_fitness(plot, logbook, title, file_name=file_title)
 
     # Output file out.
     output_solution(best_sol, file_name)

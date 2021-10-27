@@ -1,18 +1,18 @@
-from sol.HashData import init_data
-from sol.ConfigSol import config_population, config_create
-from sol.EvolStats import config_stats
-from sol.main import execute
 import numpy as np
 import sys
 sys.path.append("..")
 sys.path.append("../sol")
+from sol.HashData import init_data
+from sol.ConfigSol import config_population, config_create
+from sol.EvolStats import config_stats
+from sol.main import execute
 
 
 def config_experiments():
 
-    NPROBLEM = [2, 3, 4]
+    NPROBLEM = [1, 2, 3, 4]
 
-    NGEN = [10]  # Número de generaciones.
+    NGEN = [50]  # Número de generaciones.
     CXPB = [0.85]  # Probabilidad de cruce.
     MUTPB = [0.15]  # Probabilidad de mutación.
     NIND = [300]  # Número de individuos en población.
@@ -42,7 +42,7 @@ def execute_experiments(experiments):
 
         for exp in problem:
             execute(config, toolbox, stats, rides, adapted,
-                    file_name, *exp, plot=True)
+                    file_name, *exp, plot=False)
 
 
 def main():

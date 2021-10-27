@@ -36,16 +36,14 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     end = time()
 
     # Plot fitness and penalty.
-    if plot:
-        log("Printing fitness and penalty over generations.")
-        plot_dif_scales(logbook, title, file_name=file_title)
+    log("Printing fitness and penalty over generations.")
+    plot_dif_scales(plot, logbook, title, file_name=file_title)
 
     # Pareto front from last population.
-    if plot:
-        log(
-            f"Printing pareto front for first and last population. N: {len(pop)}")
-        plot_pareto_front(init_pop, pop, config, rides,
-                          adapted, title, file_name=file_title)
+    log(
+        f"Printing pareto front for first and last population. N: {len(pop)}")
+    plot_pareto_front(plot, init_pop, pop, config, rides,
+                      adapted, title, file_name=file_title)
 
     # Output file out.
     output_solution(best_sol, file_name)
