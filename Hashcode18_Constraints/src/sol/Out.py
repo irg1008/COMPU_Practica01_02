@@ -1,6 +1,5 @@
 from EvalSol import get_rides_from_ind, sort_rides
 import os
-import numpy as np
 
 import matplotlib.pyplot as plt
 plt_styles = plt.style.available
@@ -34,6 +33,12 @@ def output_solution(sol, file_name):
     log(f"Output file for {file_name} has been created in output folder with same name.")
 
 
+def get_nice_legend(ax):
+    legend = ax.legend(loc="best", shadow=True, edgecolor="black",
+                       borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
+    plt.setp(legend.get_texts(), color="black")
+
+
 def show_or_save(plot, file_name, title):
     if not plot and file_name is not None:
         folder = f"../../Plots/{file_name}"
@@ -53,17 +58,25 @@ def plot_pen_fitness(plot, lb, title="Penalty over generations", file_name=None)
     maxs = lb.select("max")
     mins = lb.select("min")
 
-    _, ax = plt.subplots(figsize=(10, 8))
+    min_value = min(mins)
 
-    ax.plot(gen, avgs, "r-", label="Average Fitness")
-    ax.plot(gen, maxs, "b-", label="Max. Fitness")
-    ax.plot(gen, mins, "g-", label="Min. Fitness")
-    ax.set_xlabel("Generation")
-    ax.set_ylabel("Fitness and Penalty", color="b")
-    ax.set_title(title)
+    fig, (ax1, ax2) = plt.subplots(2, figsize=(10, 6))
 
-    legend = plt.legend(loc="best", shadow=True, edgecolor="black",
-                        borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
+    ax1.plot(gen, avgs, "g-", label="Average Fitness")
+    ax1.plot(gen, maxs, "r-", label="Maxs Fitness")
+    ax1.plot(gen, mins, "b-", label="Mins Fitness")
+    ax1.set_xlabel("Generation")
+    ax1.set_ylabel("Fitness - Penalty", color="b")
+    get_nice_legend(ax1)
 
-    plt.setp(legend.get_texts(), color="black")
+    ax2.plot(gen, avgs, "g-", label="Average Fitness")
+    ax2.plot(gen, maxs, "r-", label="Maxs Fitness")
+    ax2.plot(gen, mins, "b-", label="Mins Fitness")
+    ax2.set_xlabel("Generation")
+    ax2.set_ylim([min_value, 0])
+    ax2.set_ylabel("Penalty", color="r")
+    get_nice_legend(ax2)
+    
+    fig.suptitle(title)
+
     show_or_save(plot, file_name, title="pen_fitness")

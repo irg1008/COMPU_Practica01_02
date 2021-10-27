@@ -29,7 +29,7 @@ def distance(ind, rides, adapted):
 def feasible(ind, rides, adapted, B):
     pen = get_penalty(ind, rides, adapted)
     threshold = B  # Bonus value of problem.
-    return -threshold <= pen <= threshold
+    return pen <= threshold
 
 
 def config_alg(toolbox, config, rides, adapted, INDPB, TOURNSIZE):
