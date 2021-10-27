@@ -1,3 +1,7 @@
+## [IMPORTANTE] - Para ejecutar los experimentos debemos estar en la carpeta de experimentos.
+
+---
+
 ### Sobre multiprocesamiento  en la ejecución
 
 Hemos incluido la librería [__scoop__](https://github.com/soravux/scoop) para poder usar multiprocesamiento con DEAP.

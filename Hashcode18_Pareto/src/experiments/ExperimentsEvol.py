@@ -54,7 +54,7 @@ def execute_experiments(experiments):
                 continue
 
             execute(config, toolbox, stats, rides, adapted,
-                    file_name, *exp, plot=True)
+                    file_name, *exp, plot=False)
 
 
 def main():

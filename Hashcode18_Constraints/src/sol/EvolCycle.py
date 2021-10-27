@@ -17,21 +17,27 @@ def get_penalty(ind, rides, adapted):
 
 
 def distance(ind, rides, adapted):
+    def constant(pen): return pen
+    def lineal(pen): return pen*2
+    def quadratic(pen): return pen**2
+
     pen = get_penalty(ind, rides, adapted)
-    return pen
+    dis = lineal(pen)
+    return dis
 
 
-def feasible(ind, rides, adapted):
+def feasible(ind, rides, adapted, B):
     pen = get_penalty(ind, rides, adapted)
-    return pen == 0
+    threshold = B  # Bonus value of problem.
+    return -threshold <= pen <= threshold
 
 
 def config_alg(toolbox, config, rides, adapted, INDPB, TOURNSIZE):
-    def eval(ind): return eval_ind(ind, config, rides, adapted)
-    def feas(ind): return feasible(ind, rides, adapted)
-    def dis(ind): return distance(ind, rides, adapted)
+    F, _, B, _ = config
 
-    F = config[0]
+    def eval(ind): return eval_ind(ind, config, rides, adapted)
+    def feas(ind): return feasible(ind, rides, adapted, B)
+    def dis(ind): return distance(ind, rides, adapted)
 
     toolbox.register("select", tools.selTournament, tournsize=TOURNSIZE)
     toolbox.register("mate", tools.cxOnePoint)
