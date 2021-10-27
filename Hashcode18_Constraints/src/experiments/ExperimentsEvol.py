@@ -1,11 +1,11 @@
+from sol.HashData import init_data
+from sol.ConfigSol import config_population, config_create
+from sol.EvolStats import config_stats
+from sol.main import execute
 import numpy as np
 import sys
 sys.path.append("..")
 sys.path.append("../sol")
-from sol.main import execute
-from sol.EvolStats import config_stats
-from sol.ConfigSol import config_population, config_create
-from sol.HashData import init_data
 
 
 def config_experiments():
@@ -19,7 +19,7 @@ def config_experiments():
     INDPB = [0.2]  # Probabilidad independiente de mutar cada atributo.
     TOURNSIZE = [3]
 
-    values_to_combine = [NGEN, CXPB, MUTPB, NIND, INDPB, TOURNSIZE]
+    values_to_combine = [CXPB, MUTPB, NGEN, INDPB, TOURNSIZE, NIND]
     combinations = np.array(np.meshgrid(*values_to_combine)
                             ).T.reshape(-1, len(values_to_combine))
 
@@ -41,9 +41,8 @@ def execute_experiments(experiments):
         stats = config_stats()
 
         for exp in problem:
-            NGEN, CXPB, MUTPB, NIND, INDPB, TOURNSIZE = exp
             execute(config, toolbox, stats, rides, adapted,
-                    file_name, CXPB, MUTPB, NGEN, INDPB, TOURNSIZE, plot=True)
+                    file_name, *exp, plot=True)
 
 
 def main():

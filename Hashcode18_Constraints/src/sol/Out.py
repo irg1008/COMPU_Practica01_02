@@ -1,5 +1,6 @@
 from EvalSol import get_rides_from_ind, sort_rides
 from os import path
+import numpy as np
 
 import matplotlib.pyplot as plt
 plt_styles = plt.style.available
@@ -32,12 +33,21 @@ def output_solution(sol, file_name):
 
     log(f"Output file for {file_name} has been created in output folder with same name.")
 
+def show_or_save(file_name):
+    if file_name is None:
+        plt.show()
+    else:
+        plt.savefig(f"../../Plots/{file_name}.png")
 
-def plot_pen_fitness(lb, title="Penalty over generations"):
+def plot_pen_fitness(lb, title="Penalty over generations", file_name=None):
     gen = lb.select("gen")
     avgs = lb.select("avg")
     maxs = lb.select("max")
     mins = lb.select("min")
+    
+    avgs = np.abs(avgs)
+    maxs = np.abs(maxs)
+    mins = np.abs(mins)
 
     _, ax = plt.subplots()
 
@@ -52,4 +62,4 @@ def plot_pen_fitness(lb, title="Penalty over generations"):
                     borderpad=1, labelspacing=0.8, facecolor="whitesmoke")
     
     plt.setp(legend.get_texts(), color="black")
-    plt.show()
+    show_or_save(file_name)

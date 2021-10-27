@@ -1,0 +1,758 @@
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174931, 71)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 7.59 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175997, 50)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 15.17 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175964, 39)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 23.45 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174484, 63)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 8.2 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174497, 63)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 15.31 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175280, 71)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 23.14 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174017, 67)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 8.83 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175424, 62)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 15.9 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175316, 53)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 24.28 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175341, 59)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 10.5 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175485, 67)
+----> Printing fitness and penalty over generations.
+../sol\Out.py:180: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warninmax_open_warning`).
+  fig, ax = plt.subplots(2, figsize=size)
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 20.26 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (176456, 43)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 31.13 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175649, 64)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 10.99 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175270, 51)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 21.37 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (176050, 64)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 32.33 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174148, 71)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 12.33 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174845, 67)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 22.83 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175767, 63)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 34.88 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175162, 51)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 13.69 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175727, 70)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 26.47 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (176477, 52)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 40.9 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174690, 67)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 14.35 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175659, 63)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 28.25 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175529, 54)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 43.42 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174695, 64)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 15.59 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175544, 60)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 29.56 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175304, 51)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 46.07 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174808, 58)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 10.49 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175546, 55)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 20.67 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (176552, 59)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 31.36 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174380, 61)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 11.0 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175112, 65)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 21.72 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175820, 51)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 32.52 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174519, 56)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 11.87 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174717, 68)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 22.54 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175419, 56)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 34.18 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174552, 66)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 13.38 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175645, 62)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 26.81 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (176229, 55)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 41.34 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174120, 61)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 14.29 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175571, 67)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 28.49 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175436, 39)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 43.72 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174240, 73)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 15.67 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174828, 66)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 30.04 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175372, 55)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 46.07 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174960, 71)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 13.38 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175619, 57)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 26.88 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175643, 59)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 41.45 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174950, 68)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 14.26 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175968, 61)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 28.39 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175552, 68)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 43.6 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (174324, 57)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 15.51 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175071, 59)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 30.4 seconds.
+* Executing b_should_be_easy_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (175364, 53)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for b_should_be_easy_sp.in has been created in output folder with same name.
+----> Executing time: 46.14 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9555449, 1011)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 159.69 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9532236, 1009)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 305.7 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9566142, 999)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 451.59 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9539568, 1055)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 164.13 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9557995, 985)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 303.62 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9560045, 1005)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 451.13 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9549651, 1023)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 161.78 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9568691, 1028)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 306.32 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9545120, 1022)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 451.35 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9535432, 1020)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 207.16 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9560073, 1018)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 401.83 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9563116, 1016)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 598.46 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9537283, 1047)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 205.43 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9549179, 1037)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 402.24 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9548447, 984)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 592.65 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9516129, 1011)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 208.62 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9523968, 997)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 402.46 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9561116, 995)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 593.54 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9553631, 1002)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 256.43 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9557243, 1023)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 498.74 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9586209, 1030)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 743.32 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9543414, 1014)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 257.47 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9573321, 1035)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 501.11 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9559567, 1000)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 745.03 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9527637, 1009)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 259.44 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9541006, 1021)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 502.95 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.1, cxpb: 0.9, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9538627, 1021)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 749.58 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9551548, 1035)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 207.79 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9556097, 1012)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 394.47 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9564707, 1027)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 588.4 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9528611, 999)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 205.45 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9548634, 1041)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 398.75 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9599974, 1046)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 591.63 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9525164, 999)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 207.56 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9552067, 1033)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 396.85 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9561235, 1026)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 595.67 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9532981, 986)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 255.34 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9550372, 981)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 496.34 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9588538, 986)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 738.51 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9541662, 1040)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 256.36 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9553919, 993)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 498.08 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9555743, 1032)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 743.68 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9522438, 991)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 257.43 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9553344, 1024)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 501.62 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.3, cxpb: 0.7, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9567089, 1045)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 746.1 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9533396, 1018)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 254.94 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9574470, 1016)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 497.05 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 180.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9571450, 998)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 180
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 738.98 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9522127, 1031)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 256.1 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9537782, 1039)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 499.27 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 300.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9564375, 1011)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 300
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 750.21 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 300.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9515185, 1015)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 265.75 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 600.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9536203, 1022)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 515.73 seconds.
+* Executing c_no_hurry_sp.in with ngen: 15.0, mutpb: 0.5, cxpb: 0.5, indpb: 0.2, nind: 300.0, lambda: 900.0, mu: 420.0
+----> Evolving algorithm.
+----> Best sol fitness and penalty: (9569851, 1008)
+----> Printing fitness and penalty over generations.
+----> Printing pareto front for first and last population. N: 420
+----> Output file for c_no_hurry_sp.in has been created in output folder with same name.
+----> Executing time: 742.41 seconds.

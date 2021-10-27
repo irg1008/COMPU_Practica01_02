@@ -1,9 +1,9 @@
 from ConfigSol import config_population, config_create
 from EvolStats import config_stats
 from EvolCycle import evolve, get_pop, eval_ind
-from Out import output_solution, get_pareto_front, plot_dif_scales, log
+from Out import output_solution, plot_pareto_front, plot_dif_scales, log
 from HashData import init_data
-from scoop import futures
+# from scoop import futures
 
 from time import time
 
@@ -13,27 +13,24 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
 
     title = f"* Executing {file_name} with ngen: {NGEN}, mutpb: {MUTPB}, cxpb: {CXPB}, indpb: {INDPB}, nind: {NIND}, lambda: {LAMBDA}, mu: {MU}"
     print(title)
+    file_title = f"{file_name}_CXPB-{CXPB}_MUTPB-{MUTPB}_LAMBDA-{LAMBDA}_MU-{MU}"
 
     # Start timing.
     start = time()
 
     # Get initial population.
-    pop = get_pop(toolbox, NIND)
-
-    # Pareto front from first population.
-    if plot:
-        log("Printing pareto front for first population.")
-        get_pareto_front(pop, config, rides, adapted, title)
+    init_pop = get_pop(toolbox, NIND)
 
     # Evolve algorithm.
     log("Evolving algorithm.")
+    pop = list(init_pop)
     logbook, best_sol, pop, _ = evolve(
         toolbox, pop, stats, config, rides, adapted,
         MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB)
     log(f"Best sol fitness and penalty: {eval_ind(best_sol, config, rides, adapted)}")
 
     # Register map for multiproccesing.
-    toolbox.register("map", futures.map)
+    # toolbox.register("map", futures.map)
 
     # Stop timing.
     end = time()
@@ -41,12 +38,14 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
     # Plot fitness and penalty.
     if plot:
         log("Printing fitness and penalty over generations.")
-        plot_dif_scales(logbook, title)
+        plot_dif_scales(logbook, title, file_name=file_title)
 
     # Pareto front from last population.
     if plot:
-        log("Printing pareto front for last population.")
-        get_pareto_front(pop, config, rides, adapted, title)
+        log(
+            f"Printing pareto front for first and last population. N: {len(pop)}")
+        plot_pareto_front(init_pop, pop, config, rides,
+                          adapted, title, file_name=file_title)
 
     # Output file out.
     output_solution(best_sol, file_name)
