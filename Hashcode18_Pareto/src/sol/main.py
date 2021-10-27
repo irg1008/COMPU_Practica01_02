@@ -3,7 +3,6 @@ from EvolStats import config_stats
 from EvolCycle import evolve, get_pop, eval_ind
 from Out import output_solution, plot_pareto_front, plot_dif_scales, log
 from HashData import init_data
-# from scoop import futures
 
 from time import time
 
@@ -28,9 +27,6 @@ def execute(config, toolbox, stats, rides, adapted, file_name,
         toolbox, pop, stats, config, rides, adapted,
         MU, LAMBDA, CXPB, MUTPB, NGEN, INDPB)
     log(f"Best sol fitness and penalty: {eval_ind(best_sol, config, rides, adapted)}")
-
-    # Register map for multiproccesing.
-    # toolbox.register("map", futures.map)
 
     # Stop timing.
     end = time()
